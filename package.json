@@ -1,7 +1,7 @@
 {
   "name": "liri-node-app",
   "version": "1.0.0",
-  "description": "Language Interpretation and Recognition Interface",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/krab7191/liri-node-app.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Karsten Rabe",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/krab7191/liri-node-app/issues"
