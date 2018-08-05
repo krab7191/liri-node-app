@@ -1,5 +1,6 @@
 //jshint esversion: 6
 
+var keys = require("./keys.js");
 var twitClient = require("./twitter.js");
 var spotClient = require("./spotify.js");
 var request = require("request");
@@ -26,7 +27,8 @@ funcs = {
                 console.log(err);
             }
             else {
-                funcs.spotify(data);
+                console.log(`OMDB API Key: ${keys.omdb}`);
+                // funcs.spotify(data);
             }
         });
         return "do it!";

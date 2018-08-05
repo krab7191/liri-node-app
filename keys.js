@@ -1,3 +1,4 @@
+require("dotenv");
 console.log("Loading twitter keys...");
 
 exports.twitter = {
@@ -12,4 +13,10 @@ console.log("Loading spotify keys...");
 exports.spotify = {
     id: process.env.SPOTIFY_ID,
     secret: process.env.SPOTIFY_SECRET
+};
+
+console.log("Loading OMDB key...");
+
+exports.omdb = {
+    apikey: process.env.OMDB_API_KEY
 };
