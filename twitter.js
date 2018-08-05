@@ -7,11 +7,13 @@ var Twitter = require("twitter");
 var twitClient = new Twitter(keys.twitter);
 
 function getTweets() {
-    var params = { screen_name: 'Dwitter89422817' };
-    twitClient.get('statuses/user_timeline', params, function (error, tweets, response) {
+    twitClient.get('statuses/user_timeline', {screen_name: 'Dwitter89422817'}, function (error, tweets, response) {
         if (!error) {
             tweets.forEach(function(i) {
-                console.log(i.text);
+                if (tweets.indexOf(i) > 19) {
+                    console.log(tweets.indexOf(i));
+                }
+                console.log(`${i.created_at}: "${i.text}"`);
             });
         }
     });

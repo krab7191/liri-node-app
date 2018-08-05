@@ -1,5 +1,4 @@
 require("dotenv").config();
-console.log("Loading twitter keys...");
 
 exports.twitter = {
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -8,14 +7,12 @@ exports.twitter = {
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 };
 
-console.log("Loading spotify keys...");
 
 exports.spotify = {
     id: process.env.SPOTIFY_ID,
     secret: process.env.SPOTIFY_SECRET
 };
 
-console.log("Loading OMDB key...");
 
 exports.omdb = {
     apikey: process.env.OMDB_API_KEY

@@ -8,9 +8,11 @@ var fs = require("fs");
 
 funcs = {
     tweets: function () {
+        console.log("Loading twitter keys...");
         twitClient.getTweets();
     },
     spotify: function (song) {
+        console.log("Loading spotify keys...");
         console.log(song);
         console.log(`Spotify client: ${spotClient}`);
         return "spotty";
