@@ -6,18 +6,17 @@ var spotClient = require("./spotify.js");
 var request = require("request");
 var fs = require("fs");
 
-console.log(`Twitter client: ${twitClient}`);
-console.log(`Spotify client: ${spotClient}`);
-
 funcs = {
     tweets: function () {
-        return "tweets";
+        twitClient.getTweets();
     },
     spotify: function (song) {
         console.log(song);
+        console.log(`Spotify client: ${spotClient}`);
         return "spotty";
     },
     movie: function (movie) {
+        console.log(`OMDB key: ${keys.omdb.apikey}`);
         console.log(movie);
         return "movies";
     },
@@ -28,7 +27,7 @@ funcs = {
             }
             else {
                 console.log(`OMDB API Key: ${keys.omdb}`);
-                // funcs.spotify(data);
+                funcs.spotify(data);
             }
         });
         return "do it!";
@@ -44,5 +43,5 @@ if (process.argv[3]) {
     console.log(funcs[process.argv[2]](process.argv[3]));
 }
 else if (process.argv[2]) {
-    console.log(funcs[process.argv[2]]());
+    funcs[process.argv[2]]();
 }

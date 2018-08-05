@@ -1,4 +1,4 @@
-require("dotenv");
+require("dotenv").config();
 console.log("Loading twitter keys...");
 
 exports.twitter = {
