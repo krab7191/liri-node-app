@@ -8,7 +8,7 @@ var twitClient = new Twitter(keys.twitter);
 
 function getTweets() {
     twitClient.get('statuses/user_timeline', {screen_name: 'Dwitter89422817'}, function (error, tweets, response) {
-        if (!error) {
+        if (!error && response.statusCode === 200) {
             tweets.forEach(function(i) {
                 if (tweets.indexOf(i) > 19) {
                     console.log(tweets.indexOf(i));
