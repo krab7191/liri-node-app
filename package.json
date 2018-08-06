@@ -18,6 +18,7 @@
   "homepage": "https://github.com/krab7191/liri-node-app#readme",
   "dependencies": {
     "dotenv": "^6.0.0",
+    "prettyjson": "^1.2.1",
     "request": "^2.87.0",
     "twitter": "^1.7.1"
   },
