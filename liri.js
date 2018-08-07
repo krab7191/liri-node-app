@@ -24,21 +24,12 @@ funcs = {
                 console.log(err);
             }
             else {
-                console.log(`OMDB API Key: ${keys.omdb}`);
-                funcs.spotify(data);
+                var dArr = data.split(",");
+                dArr.forEach(function(i) {
+                    funcs.spotify(i.trim());
+                });
             }
         });
-        return "do it!";
-    },
-    request: function (url, callback) {
-        if (!url) {
-            console.log("No URL specified");
-        }
-        else {
-            console.log(`Making request to ${url}`);
-            console.log(`Firing callback ${callback}`);
-        }
-        return "fudge";
     }
 };
 
@@ -54,5 +45,5 @@ else if (funcs[process.argv[2]]) {
     funcs[process.argv[2]]();
 }
 else {
-    console.log("Not a valid function");
+    console.log("Command not found");
 }
