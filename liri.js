@@ -1,9 +1,8 @@
 //jshint esversion: 6
 
-var keys = require("./keys.js");
 var twitClient = require("./twitter.js");
 var spotClient = require("./spotify.js");
-var request = require("request");
+var omdb = require("./omdb.js");
 var fs = require("fs");
 
 funcs = {
@@ -16,9 +15,8 @@ funcs = {
         spotClient.search(song);
     },
     movie: function (movie) {
-        console.log(`OMDB key: ${keys.omdb.apikey}`);
-        console.log(movie);
-        return "movies";
+        console.log("Loading OMDB API key...");
+        omdb.getMovie(movie);
     },
     doIt: function () {
         fs.readFile("./random.txt", "utf8", function (err, data) {
