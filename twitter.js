@@ -16,10 +16,12 @@ function getTweets() {
                 console.log(`${i.created_at}: "${i.text}"`);
             });
         }
+        else {
+            console.log(`Error occurred: ${error}`);
+        }
     });
 }
 
 module.exports = {
-    twitClient: twitClient,
     getTweets: getTweets
 };

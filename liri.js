@@ -4,12 +4,6 @@ var keys = require("./keys.js");
 var twitClient = require("./twitter.js");
 var spotClient = require("./spotify.js");
 var request = require("request");
-var prettyJSON = require('prettyjson');
-var options = {
-    keysColor: 'white',
-    dashColor: 'magenta',
-    stringColor: 'rainbow'
-};
 var fs = require("fs");
 
 funcs = {
@@ -56,15 +50,11 @@ if (process.argv[3] && funcs[process.argv[2]]) {
     for (var i = 3; i < process.argv.length; i++) {
         args += process.argv[i] + " ";
     }
-    console.log(funcs[process.argv[2]](args));
+    funcs[process.argv[2]](args);
 }
 else if (funcs[process.argv[2]]) {
     funcs[process.argv[2]]();
 }
 else {
     console.log("Not a valid function");
-}
-
-function pretty(data) {
-    console.log(prettyJSON.render(data, options));
 }

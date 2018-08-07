@@ -7,7 +7,6 @@ var Spotify = require("node-spotify-api");
 var spotClient = new Spotify(keys.spotify);
 
 module.exports = {
-    spotClient: spotClient,
     search: search
 };
 
