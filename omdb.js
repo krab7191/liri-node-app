@@ -1,6 +1,8 @@
 //jshint esversion: 6
 
 require("dotenv").config();
+var log = require('./liri.js');
+console.log(log);
 var keys = require("./keys.js");
 var request = require("request");
 
