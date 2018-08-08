@@ -25,22 +25,13 @@ funcs = {
             }
             else {
                 var dArr = data.split(",");
-                dArr.forEach(function(i) {
+                dArr.forEach(function (i) {
                     funcs.spotify(i.trim());
                 });
             }
         });
     }
 };
-
-function log (data) {
-        fs.appendFile("./log.txt", data, "utf8", function(err) {
-            if (err) {
-                console.log(`Error: ${err}`);
-            }
-        });
-        return true;
-    }
 
 if (process.argv[3] && funcs[process.argv[2]]) {
     // concat the args into on movie or song title
@@ -56,7 +47,3 @@ else if (funcs[process.argv[2]]) {
 else {
     console.log("Command not found");
 }
-
-module.exports = {
-    log: log
-};
