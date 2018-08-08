@@ -6,6 +6,9 @@ var keys = require("./keys.js");
 var request = require("request");
 
 function getMovie(title) {
+    if (!title) {
+        title = "Mr. Nobody";
+    }
     var url = "https://www.omdbapi.com/?apikey=" + keys.omdb.apikey + "&plot=short&t=" + title;
     var toLog = {};
     request(url, function (error, response, body) {

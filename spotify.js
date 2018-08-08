@@ -12,6 +12,9 @@ module.exports = {
 };
 
 function search(title) {
+    if (!title) {
+        title = "The sign";
+    }
     spotClient.search({
         type: 'track',
         query: title
