@@ -10,7 +10,7 @@ function fileLog(data) {
             console.log(`Error: ${err}`);
         }
         else {
-            console.log(`Adding data to the logfile`);
+            console.log(`\nAdding data to the logfile`);
         }
     });
 }

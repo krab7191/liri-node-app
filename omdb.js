@@ -12,12 +12,12 @@ function getMovie(title) {
     var url = "https://www.omdbapi.com/?apikey=" + keys.omdb.apikey + "&plot=short&t=" + title;
     var toLog = {};
     request(url, function (error, response, body) {
+        body = JSON.parse(body);
         if (error) {
             console.log(`Error: ${error}`);
             toLog.Error = error;
         }
-        if (!error && response.statusCode == 200) {
-            body = JSON.parse(body);
+        if (!error && response.statusCode == 200 && body.Response !== "False") {
             console.log(`Title: ${body.Title}`);
             toLog.Title = body.Title;
             console.log(`Released: ${body.Released}`);
@@ -40,6 +40,11 @@ function getMovie(title) {
             toLog.Plot = body.Plot;
             console.log(`Actors: ${body.Actors}`);
             toLog.Actors = body.Actors;
+        }
+        else if (body.Response === "False") {
+            var e = body.Error;
+            console.log(`Error: ${e}`);
+            toLog.Error = e;
         }
         lf.fileLog(JSON.stringify(toLog) + "\n");
     });
